@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E1201710040168.Views.HomePage"
+             xmlns:vm="clr-namespace:PM2E1201710040168.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:HomeViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="White">#ffff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="130" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="{StaticResource White}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView VerticalOptions="FillAndExpand">
+                    <Image Source="uth.png" VerticalOptions="Center" HeightRequest="130" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,30,30,24" Spacing="10">
+                <Label Text="Latitud" FontAttributes="Bold"/>
+                <Entry x:Name="Latitud"  Keyboard="Numeric" />
+                <Label Text="Longitud" FontAttributes="Bold"/>
+                <Entry x:Name="Longitud"  Keyboard="Numeric" />
+                <Label Text="Describa la Ubicación" FontAttributes="Bold"/>
+                <Editor x:Name="DescL"  HeightRequest="100"/>
+                <Label Text="Descripción Corta" FontAttributes="Bold"/>
+                <Entry x:Name="DescC" />
+                <Button x:Name="Save" Margin="0,10,0,0" Text="Agregar" BackgroundColor="{StaticResource Primary}" TextColor="White" Clicked="Save_Clicked" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

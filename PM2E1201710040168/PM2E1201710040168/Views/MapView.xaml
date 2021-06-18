@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="PM2E1201710040168.Views.MapView">
+
+    <maps:Map MapType="Street" 
+              HorizontalOptions="FillAndExpand" 
+              VerticalOptions="FillAndExpand" 
+              IsShowingUser="True" x:Name="mapas">
+        <maps:Map.ItemTemplate>
+            <DataTemplate>
+                <maps:Pin Type="Place"
+                          Position="{Binding Position}"
+                          Address="{Binding Descl}"
+                          Label="{Binding Descc}"/>
+            </DataTemplate>
+        </maps:Map.ItemTemplate>
+    </maps:Map>
+
+</ContentPage>
